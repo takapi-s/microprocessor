@@ -1,13 +1,13 @@
 #乗数
-M1:     EQU     80H
-M2:     EQU     81H
+M1:     EQU     81H
+M2:     EQU     80H
 
 #被乗数
-Q1:     EQU     82H
-Q2:     EQU     83H
+Q1:     EQU     83H
+Q2:     EQU     82H
 
-P1:     EQU     84H#部分積
-P2:     EQU     85H
+P1:     EQU     85H#部分積
+P2:     EQU     84H
 
 n:      EQU     86H
 
@@ -21,24 +21,18 @@ LOOP:   LD      ACC,    [Q1]
         AND     ACC,    01H
         CMP     ACC,    00H
         BZ      SHIFT
-        
+        RCF
         LD      ACC,    [P1]
-        ADD     ACC,    [M1]
+        ADC     ACC,    [M1]
         ST      ACC,    [P1]
         
-        BNC     NC
         LD      ACC,    [P2]
-        ADD     ACC,    01H
-        ST      ACC,    [P2]
-        
-NC:
-        LD      ACC,    [P2]
-        ADD     ACC,    [M2]
+        ADC     ACC,    [M2]
         ST      ACC,    [P2]
         
         
         
-SHIFT:
+SHIFT:#左←
 
         LD      ACC,    [M2]
         SLL     ACC
@@ -54,7 +48,7 @@ SHIFT:
         ST      ACC,    [M2]
         
 
-SHIFT2:    
+SHIFT2:#右→
         LD      ACC,    [Q1]
         SRL     ACC
         ST      ACC,    [Q1]
