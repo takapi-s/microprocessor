@@ -2,5 +2,5 @@
 以下のアセンブリ言語エミュレータで実行できる
 
 https://emu.kemuide.openwaseda.net/index.html
-
-コピペして使える
+# フローチャート
+![flowchart](flowchart.drawio.svg)
