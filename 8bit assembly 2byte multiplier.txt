@@ -6,7 +6,7 @@ M2:     EQU     80H
 Q1:     EQU     83H
 Q2:     EQU     82H
 
-P1:     EQU     85H#部分積
+P1:     EQU     85H
 P2:     EQU     84H
 
 n:      EQU     86H
